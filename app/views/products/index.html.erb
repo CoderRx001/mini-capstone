@@ -1,0 +1,16 @@
+<div class="row">
+  <h1>Popcorn App</h1>
+  <% @products.each do |popcorn| %>
+    <h2><a href="/products/<% popcorn.id %>"><%= popcorn.title %></a></h2>
+      <div class="col-md-4">
+        <div class="thumbnail well">
+        <h4><%= popcorn.title %></h4>
+        <img src="<%= popcorn.image_url %>" alt="<%= popcorn.title %>">
+        <h3><%= popcorn.price %></h3>
+        <h3><%= popcorn.price %></h3>
+        <h3><%= popcorn.description %></h3>
+        </div>
+      </div>
+
+  <% end %>
+</div>

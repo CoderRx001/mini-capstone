@@ -1,0 +1,9 @@
+<h2><%= @products.brand %></h2>
+<h4><%= @products.title %></h4>
+<h3><%= @products.price %></h3>
+<h3><%= @products.image %></h3>
+<h3><%= @products.description %></h3>
+
+
+<%= link_to "Edit Recipe", "/recipes/#{ @recipe.id }/edit" %> 
+<%= link_to "Delete", "/recipes/#{ @recipe.id }", method: :delete %>
