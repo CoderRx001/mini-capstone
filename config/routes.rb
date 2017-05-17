@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     get '/products/:id/edit' => 'products#edit' #these 2 are pairs
     patch '/products/:id' => 'products#update'
 
+    get '/random' => 'products#random'
 end

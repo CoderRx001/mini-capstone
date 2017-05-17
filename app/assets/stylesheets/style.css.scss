@@ -1,6 +1,10 @@
 body {
   font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
   background-image: url('xv.png');
+
+
+  margin: 20px auto;
+  width: 90%;
 }
 
 
@@ -20,4 +24,8 @@ h2{
 
   h2 span {
     background-color: #000;
+}
+
+.red_price{
+  color: red
 }

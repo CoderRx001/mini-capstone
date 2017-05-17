@@ -7,11 +7,33 @@ class ProductsController < ApplicationController
 
   def index
     @products = Popcorn.all
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    discount = params[:discount]
+    search_term = params[:search_term]
+
+      if search_term
+        @products = Product.where(
+                                  "name iLIKE ? OR description iLIKE?",
+                                   "%#{search_term}%",
+                                   "%#{search_term}%"
+                                   )
+      end
+
+      if discount
+        @products = @products.where("price < ?", discount)
+      end
+
+      if sort_attribute && sort_order
+        @products = products.order(sort_attribute => sort_order)
+      elsif sort_attribute
+        @products = @products.order(sort_attribute)
+
+      end
   end
 
   def show
-    products_id = params[:id]
-    @products = Popcorn.find_by(id: products_id)
+   @products = Popcorn.all
   end
 
   def new
@@ -50,5 +72,10 @@ class ProductsController < ApplicationController
     product.destroy
     flash[:success] = "Product Destroyed"
     redirect_to "/"
+  end
+
+  def random
+    product = Product.all.sample
+    redirect_to "/products/#{product.id}"
   end
 end
