@@ -1,7 +1,7 @@
 <div class="row">
   <h1>Popcorn App</h1>
   <% @products.each do |popcorn| %>
-    <h2><a href="/products/<% popcorn.id %>"><%= popcorn.name %></a></h2>
+    <h2><a href="/products/<%= popcorn.id %>"><%= popcorn.name %></a></h2>
       <div class="col-md-4">
         <div class="thumbnail well">
         <h4><%= popcorn.name %></h4>

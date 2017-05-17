@@ -2,30 +2,32 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="product_single row">
-      <h2><%= @popcorn.name %></h2>
+
+      <h1>hello</h1>
+      <h2><%= @products.name %></h2>
+      <h2><%= @products.brand %></h2>
 
       <div class="col-md-6">
-        <h4><%= @popcorn.sale_message %></h4>
-        <p class="<%= "red price" if @popcorn.discounted? %>">Price: <%= number_to_currency(@popcorn.price) %></p>
-        <p>Tax: <%= number_to_currency(@popcorn.tax) %></p>
-        <p>Total: <%= number_to_currency(@popcorn.total) %></p>
-        <p>Desription: <%= @popcorn.description %></p>
+        <h4><%= @products.sale_message %></h4>
+        <p class="<%= "red price" if @products.discounted? %>">Price: <%= number_to_currency(@products.price) %></p>
+        <p>Tax: <%= number_to_currency(@products.tax) %></p>
+        <p>Total: <%= number_to_currency(@products.total) %></p>
+        <p>Desription: <%= @products.description %></p>
       </div>
     
       <div class="col-md-6">
-        <img src="<%= @popcorn.image %>" alt="<%= @popcorn.name%>">
+        <img src="<%= @products.image %>" alt="<%= @products.name%>">
       </div>
           
-      <h2><%= @popcorn.brand %></h2>
-      <h4><%= @popcorn.title %></h4>
-      <h3><%= @popcorn.price %></h3>
-      <h3><%= @popcorn.image %></h3>
-      <h3><%= @popcorn.description %></h3>
+      <h4><%= @products.name %></h4>
+      <h3><%= @products.price %></h3>
+      <h3><%= @products.image %></h3>
+      <h3><%= @products.description %></h3>
 
-      <h5>supplied by <%= @popcorn.supplier.name %></h5>
+      <h5>supplied by <%= @products.supplier.name %></h5>
 
-      <%= link_to "Edit Recipe", "/recipes/#{ @recipe.id }/edit" %> 
-      <%= link_to "Delete", "/recipes/#{ @recipe.id }", method: :delete %>
-    </div>
+      <%= link_to "Edit Item", "/products/#{@popcorn.id}/edit" %> 
+      <%= link_to "Delete", "/products/#{@popcorn.id}", {method: :delete }%>
+
   </div>
 </section>

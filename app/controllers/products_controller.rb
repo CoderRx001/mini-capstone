@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       end
 
       if sort_attribute && sort_order
-        @products = products.order(sort_attribute => sort_order)
+        @products = @products.order(sort_attribute => sort_order)
       elsif sort_attribute
         @products = @products.order(sort_attribute)
 
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
                         image: params[:image],
                         description: params[:description]
                          )
-    priduct.save
+    product.save
   end
   
   def edit

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get '/products' => 'products#index' #url is always PLURAL
     
     get '/products/new' => 'products#new' #these 2 are pairs
-    get '/products' => 'products#create'
+    post '/products' => 'products#create'
 
     get '/products/:id' => 'products#show'
 
