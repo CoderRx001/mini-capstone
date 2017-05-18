@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-   @products = Popcorn.all
+   @product = Popcorn.find(params[:id])
   end
 
   def new

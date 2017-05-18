@@ -4,30 +4,30 @@
       <div class="product_single row">
 
       <h1>hello</h1>
-      <h2><%= @products.name %></h2>
-      <h2><%= @products.brand %></h2>
+      <h2><%= @product.name %></h2>
+      <h3><%= @product.price %></h3>
+      <h2><%= @product.brand %></h2>
 
       <div class="col-md-6">
-        <h4><%= @products.sale_message %></h4>
-        <p class="<%= "red price" if @products.discounted? %>">Price: <%= number_to_currency(@products.price) %></p>
-        <p>Tax: <%= number_to_currency(@products.tax) %></p>
-        <p>Total: <%= number_to_currency(@products.total) %></p>
-        <p>Desription: <%= @products.description %></p>
+        <h4><%= @product.sale_message %></h4>
+        <p class="<%= "red price" if @product.discounted? %>">Price: <%= number_to_currency(@product.price) %></p>
+        <p>Tax: <%= number_to_currency(@product.tax) %></p>
+        <p>Total: <%= number_to_currency(@product.total) %></p>
+        <p>Desription: <%= @product.description %></p>
       </div>
     
       <div class="col-md-6">
-        <img src="<%= @products.image %>" alt="<%= @products.name%>">
+        <img src="<%= @product.image %>" alt="<%= @product.name%>">
       </div>
           
-      <h4><%= @products.name %></h4>
-      <h3><%= @products.price %></h3>
-      <h3><%= @products.image %></h3>
-      <h3><%= @products.description %></h3>
+      <h4><%= @product.name %></h4>
+      <h3><%= @product.image %></h3>
+      <h3><%= @product.description %></h3>
 
-      <h5>supplied by <%= @products.supplier.name %></h5>
+      <h5>supplied by <%= @product.supplier.name %></h5>
 
-      <%= link_to "Edit Item", "/products/#{@popcorn.id}/edit" %> 
-      <%= link_to "Delete", "/products/#{@popcorn.id}", {method: :delete }%>
+      <%= link_to "Edit Item", "/products/#{@product.id}/edit" %> 
+      <%= link_to "Delete", "/products/#{@product.id}", {method: :delete }%>
 
   </div>
 </section>

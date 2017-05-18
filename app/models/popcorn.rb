@@ -4,7 +4,7 @@ class Popcorn < ApplicationRecord
   has_many :images
 
   def sale_message
-    if discounted?.to_i < 20
+    if discounted?
       "Discount Item!"
     else
       "Everday Value!"
@@ -30,6 +30,5 @@ class Popcorn < ApplicationRecord
     else
       image_collection.first.url
     end
-  end
-  
+  end  
 end
