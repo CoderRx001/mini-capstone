@@ -2,16 +2,24 @@
 
 <%= form_tag '/products', method: :post do %>
   <div>
-    Brand: <input type="text" name="brand"
+    Brand: <input type="text" name="brand">
   </div>
   <div>
-    name: <input type="text" name="name"
+    name: <input type="text" name="name">
   </div>
   <div>
-    Description: <input type="text" name="description"
+    Description: <input type="text" name="description">
   </div>
   <div>
-    Price: <input type="text" name="price"
+    Price: <input type="text" name="price">
   </div>
-  <input type="submit" value="Create New Item"
+  <div>
+    <select name="supplier_id">
+      <% Supplier.all.each do |supplier| %>
+        <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <input type="submit" value="Create New Item">
 <% end %>

@@ -1,3 +1,3 @@
 class Supplier < ApplicationRecord
-    has_many :popcorns
+    has_many :popcorn
 end

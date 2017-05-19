@@ -2,7 +2,8 @@ class Popcorn < ApplicationRecord
 
   belongs_to :supplier
   has_many :images
-
+  has_many :orders
+  
   def sale_message
     if discounted?
       "Discount Item!"

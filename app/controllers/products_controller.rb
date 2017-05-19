@@ -28,7 +28,6 @@ class ProductsController < ApplicationController
         @products = @products.order(sort_attribute => sort_order)
       elsif sort_attribute
         @products = @products.order(sort_attribute)
-
       end
   end
 
@@ -44,10 +43,12 @@ class ProductsController < ApplicationController
                         brand: params[:brand],
                         name: params[:name],
                         price: params[:price],
-                        image: params[:image],
+                        supplier_id: params[:supplier_id],
                         description: params[:description]
                          )
     product.save
+    p product.errors.full_messages
+    redirect_to "/products/#{product.id}"
   end
   
   def edit
