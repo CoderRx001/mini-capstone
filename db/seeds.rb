@@ -23,3 +23,21 @@ Popcorn.create!([
   
   {brand: "Puffins", name: "5 Cheese", image: "http://cdn6.bigcommerce.com/s-uef0z5n/products/84/images/263/white-cheddar-hero__42625.1410818284.1280.1280.jpg?c=2", description: "The finest italian cheeses will be shresdded to delight your taste buds.", price: 35, active: true, supplier_id: 2}
 ])
+
+#1 - expensive
+#2 - wearable
+#3 - game
+#4 - flavor
+#5 - color
+
+CategoryProduct.create!([
+                        {category_id: 1, product_id: 1}
+                        {category_id: 5, product_id: 2}
+                        {category_id: 1, product_id: 3}
+                        {category_id: 2, product_id: 4}
+                        {category_id: 2, product_id: 5}
+                        {category_id: 2, product_id: 6}
+                        {category_id: 1, product_id: 7}
+                        {category_id: 1, product_id: 8}
+                        {category_id: 1, product_id: 9}
+                        ])

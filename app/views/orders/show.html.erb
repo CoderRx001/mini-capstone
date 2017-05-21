@@ -1,4 +1,11 @@
 
-<h2>Order Page</h2>
-<h5>Your order number is  <%= @order_id %></h5>
-<h5>Quantity ordered <%= @quantity %></h5>
+<h2>Order Confirmation</h2>
+<div class="well">
+  <h3>Your order number is  <%= @order_id %></h3>
+  <h3>Product: <%= @order.product.name %></h3>
+  <h3>Price <%= number_to_currency(@order.product.price) %></h3>
+  <h3>Quantity ordered <%= @order.quantity %></h3>
+  <h3>Subtotal <%= number_to_currency(@order.subtotal) %></h3>
+  <h3>Tax <%= number_to_currency(@order.tax) %></h3>
+  <h3>Total <%= number_to_currency(@order.total) %></h3>
+</div>

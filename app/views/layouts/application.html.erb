@@ -38,6 +38,13 @@
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Separated link</a></li>
                 <li role="separator" class="divider"></li>
+                <li class="divider"></li>
+
+                <% Category.all.each do |category| %>
+                  <li><a href="/popcorns?category=<%= category %>"><%= category.name.titleize %></a></li>
+                  <% end %>
+                
+                <li class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
