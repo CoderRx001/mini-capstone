@@ -1,10 +1,5 @@
 class ProductsController < ApplicationController
   
-  # def popcorn_page
-  #   @popcorn = Popcorn.all 
-  #   render 'popcorn_page.html.erb'
-  # end
-
   def index
     @products = Popcorn.all
     sort_attribute = params[:sort]
@@ -14,7 +9,7 @@ class ProductsController < ApplicationController
     category =params[:category]
 
       if category
-        @products = Category.find_by (name: "expensive").products
+        @products = Category.find_by(name: category).popcorns
       end
 
       if search_term

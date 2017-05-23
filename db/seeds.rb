@@ -25,19 +25,17 @@ Popcorn.create!([
 ])
 
 #1 - expensive
-#2 - wearable
-#3 - game
-#4 - flavor
-#5 - color
+#2- flavor
+#3 - color
 
-CategoryProduct.create!([
-                        {category_id: 1, product_id: 1}
-                        {category_id: 5, product_id: 2}
-                        {category_id: 1, product_id: 3}
-                        {category_id: 2, product_id: 4}
-                        {category_id: 2, product_id: 5}
-                        {category_id: 2, product_id: 6}
-                        {category_id: 1, product_id: 7}
-                        {category_id: 1, product_id: 8}
-                        {category_id: 1, product_id: 9}
+CategoryPopcorn.create!([
+                        {category_id: 1, popcorn_id: 1},
+                        {category_id: 3, popcorn_id: 2},
+                        {category_id: 1, popcorn_id: 3},
+                        {category_id: 2, popcorn_id: 4},
+                        {category_id: 2, popcorn_id: 5},
+                        {category_id: 2, popcorn_id: 6},
+                        {category_id: 1, popcorn_id: 7},
+                        {category_id: 1, popcorn_id: 8},
+                        {category_id: 1, popcorn_id: 9}
                         ])

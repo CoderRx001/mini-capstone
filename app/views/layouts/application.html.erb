@@ -41,7 +41,7 @@
                 <li class="divider"></li>
 
                 <% Category.all.each do |category| %>
-                  <li><a href="/popcorns?category=<%= category %>"><%= category.name.titleize %></a></li>
+                  <li><a href="/products?category=<%= category.name %>"><%= category.name.titleize %></a></li>
                   <% end %>
                 
                 <li class="divider"></li>

@@ -14,6 +14,7 @@
           <p>Tax: <%= number_to_currency(@product.tax) %></p>
           <p>Total: <%= number_to_currency(@product.total) %></p>
           <p>Desription: <%= @product.description %></p>
+          <p>Categories: <%= @product.stringify_categories. %></p>
         </div>
       
         <div class="col-md-6">
@@ -31,9 +32,8 @@
           </div>
           
           <%= hidden_field_tag :product_id, @product_id %>
-<!--      <input type="text" name="product_id" value="<%= @product_id %>"> <-this is the html version
- -->      <%= submit_tag "Buy Now!", class: btn btn-primary %>
-        <% end %>
+         <%= submit_tag "Buy Now!", class: "btn btn-primary" %>
+         <% end %>
 
         <h5>supplied by <%= @product.supplier.name %></h5>
 
