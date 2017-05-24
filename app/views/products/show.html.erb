@@ -14,8 +14,7 @@
           <p>Tax: <%= number_to_currency(@product.tax) %></p>
           <p>Total: <%= number_to_currency(@product.total) %></p>
           <p>Desription: <%= @product.description %></p>
-          <p>Categories: <%= @product.stringify_categories. %></p>
-        </div>
+       </div>
       
         <div class="col-md-6">
           <img src="<%= @product.image %>" alt="<%= @product.name%>">
@@ -41,14 +40,14 @@
         <%= link_to "Delete", "/products/#{@product.id}", method: :delete, class: "btn btn-danger"%>
 
 
-        <%= form_tag "/orders", method: :post do %>
+        <%= form_tag "/carted_products", method: :post do %>
           <div>
             Quantity: <input type="text" name="quantity">
           </div>
           <div>
             Product ID: <input type="text" name="product_id">
           </div>
-          <input type="submit" value="Buy Now"  class="btn btn-success">
+          <input type="submit" value="Add To Cart"  class="btn btn-success">
         <% end %>
       </div>
     </div>

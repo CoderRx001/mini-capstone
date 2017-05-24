@@ -1,0 +1,9 @@
+<h1>Checkout</h1>
+<h2>Your selection has been placed in the CART</h2>
+ <% @carted_products.each do |carted_product| %>
+
+<div>Name: <%= carted_product.product.name %> </div>
+
+<div>Quantity: <%= carted_product.quantity %> </div>
+
+<% end %>

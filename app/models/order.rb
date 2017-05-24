@@ -2,6 +2,9 @@ class Order < ApplicationRecord
   belongs_to :popcorn, optional: true
   belongs_to :user, 
 
+  has_many :carted_popcorn
+  has_many :popcorns, through: :carted_popcorn
+
   def calculate_subtotal(price)
     self.subtotal = product.price * quantity
   end

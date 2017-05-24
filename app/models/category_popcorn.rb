@@ -1,4 +1,4 @@
 class CategoryPopcorn < ApplicationRecord
-  belongs_to :popcorn 
-  belongs_to :category
+  has_many :popcorn 
+  has_many :category
 end

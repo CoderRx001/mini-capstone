@@ -4,9 +4,11 @@ class Popcorn < ApplicationRecord
   has_many :images
   has_many :orders
 
-  has_many :category_products
-  has_many :categories, through: :category_products
+  has_many :category_popcorns
+  has_many :categories, through: :category_popcorns
 
+  has_many :carted_popcorns
+  has_many :orders, through: :carted_popcorns
   
   def sale_message
     if discounted?
@@ -37,7 +39,8 @@ class Popcorn < ApplicationRecord
     end
   end  
 
-  def stringify_categories
-    categories.map { |category| category.name.titlize }.join(",")
-  endh:g
+  # FIX
+  # def stringify_categories
+  #   categories.map { |category| category.name.titlize }.join(",")
+  # endh:g
 end
