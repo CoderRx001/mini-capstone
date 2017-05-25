@@ -1,0 +1,11 @@
+<h1>Checkout</h1>
+<h2>Your selection has been placed in the CART</h2>
+
+<div class="well">  
+
+  <% @carted_popcorns.each do |carted_popcorn| %>
+    <h3><%= carted_popcorn.popcorn.name %> - <%= carted_popcorn.popcorn.price %> X <%= carted_popcorn.quantity %> - <%= link_to "remove", "/carted_products/#{ carted_popcorn.id }", method: :delete %></h3>
+  <% end %>
+</div>
+
+  <%= link_to "Buy Now!", "/orders", method: :post do, class: "btn btn-primary" %>

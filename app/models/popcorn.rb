@@ -1,14 +1,13 @@
 class Popcorn < ApplicationRecord
 
   belongs_to :supplier
-  has_many :images
-  has_many :orders
 
+  has_many :images
+  has_many :carted_popcorns
+  has_many :orders, through: :carted_popcorns
   has_many :category_popcorns
   has_many :categories, through: :category_popcorns
 
-  has_many :carted_popcorns
-  has_many :orders, through: :carted_popcorns
   
   def sale_message
     if discounted?

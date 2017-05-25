@@ -1,31 +1,32 @@
 class OrdersController < ApplicationController
   def create
-    product = Popcorn.find(params[:product_id])
+    carted_popcorn = current_user.cart
+
+    subtotal = 0 
+
+    carted_popcorn.each do |carted_popcorn|
+      subtotal += carted_popcorn.popcorn.price * carted_popcorn.quantity
+    end
+
+    tax = subtotal * 0.09
+    total = subtotal + tax 
 
     order = Order.new(
-                      quantity: params[:quantity],
-                      product_id: params[:product_id],
                       user_id: current_user.id,
-                      subtotal: calculated_subtotal
-                      tax: calcuated_tax
-                      total: calculated_total
+                      subtotal: subtotal,
+                      tax: tax,
+                      total: total
                       )
-
-    order.calculate_subtotal
-    order.tax = order.subtotal * 0.09
-    order.total = order.subtotal + order.tax
-
     order.save
-    # session[:order_id] = order_id
+
+    carted_popcorn.update.all(status: "purchased", order_id: order.id )
+
     flash[:success] = "Your Order was made" 
     redirect_to "/orders/#{ order.id }"
   end
 
   def show
-    @order_id = params[:id]
-    @order = Order.find_by(id: @order_id)
-
-    @quantity = (@order.quantity)
+    @order = Order.find(params[:id])
   end
 end
 

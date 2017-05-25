@@ -40,14 +40,17 @@
         <%= link_to "Delete", "/products/#{@product.id}", method: :delete, class: "btn btn-danger"%>
 
 
-        <%= form_tag "/carted_products", method: :post do %>
+        <%= form_tag "/carted_popcorns", method: :post do %>
           <div>
-            Quantity: <input type="text" name="quantity">
+            <%= label_tag :quantity %>
+            <%= text_field_tag :quantity %>
           </div>
+
           <div>
-            Product ID: <input type="text" name="product_id">
+            <%= hidden_field_tag :product_id, @product.id %>
+            <%= submit_tag "Add To Cart",  class: "btn btn-success" %>
           </div>
-          <input type="submit" value="Add To Cart"  class="btn btn-success">
+
         <% end %>
       </div>
     </div>

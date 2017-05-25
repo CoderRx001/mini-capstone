@@ -1,12 +1,13 @@
 class Order < ApplicationRecord
   belongs_to :popcorn, optional: true
-  belongs_to :user, 
+  belongs_to :user
+  
+  has_many :carted_popcorns
+  has_many :popcorns, through: :carted_popcorns
 
-  has_many :carted_popcorn
-  has_many :popcorns, through: :carted_popcorn
 
-  def calculate_subtotal(price)
-    self.subtotal = product.price * quantity
+  def calculate_subtotal
+    self.subtotal = popcorn.price * quantity
   end
 
   def calculate_tax
